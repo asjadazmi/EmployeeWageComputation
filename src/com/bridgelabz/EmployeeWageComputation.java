@@ -1,14 +1,16 @@
 package com.bridgelabz;
-// solving using case statement
+
 
 public class EmployeeWageComputation {
 	public static final int IS_PART_TIME=2;
 	public static final int IS_FULL_TIME=1;
 	public static final int EMP_RATE_PER_HRS=20;
 	public static final int NUM_OF_WORKING_DAYS=5;
+	public static final int MAX_HRS_IN_MONTH=12;
 	public static void main(String args[]) {
-		int emphrs=0,empwage=0,totalEmpwage=0;
-		for(int day=0;day<NUM_OF_WORKING_DAYS;day++) {
+		int totalworkingdays=0;
+		int emphrs=0,totalemphrs=0;
+		while(totalemphrs<=MAX_HRS_IN_MONTH&&totalworkingdays<NUM_OF_WORKING_DAYS) {
 			int empcheck=(int)Math.floor(Math.random()*10)%3;
 			switch (empcheck) {
 			   case IS_PART_TIME:
@@ -21,12 +23,12 @@ public class EmployeeWageComputation {
 				   emphrs=0;
 				   
 			}
-			empwage=emphrs*EMP_RATE_PER_HRS;
-			totalEmpwage+= empwage;
-			System.out.println(" emp wage="+empwage+"emphrs "+" "+emphrs);
-			System.out.println("total emp wage"+totalEmpwage);
+			totalemphrs+=emphrs;
+			System.out.println("day: "+totalworkingdays+" emphr s"+emphrs);
+			
 		}
-		System.out.println("total emp wage"+totalEmpwage);
+		int totalempwage=totalemphrs*EMP_RATE_PER_HRS;
+		System.out.println("total emp wage"+totalempwage);
 		
 	}
 	
