@@ -2,29 +2,34 @@ package com.bridgelabz;
 // solving using case statement
 
 public class EmployeeWageComputation {
-	public static final int is_Full_Time=1;
-	public static final int Is_Part_Time=2;
-	public static final int Emp_Rate_Per_Hrs=20;
-	public static void main(String args[]){
-		int emphrs=0;
-		int totalemphrs=0;
-		int empwage=0;
-		int empCheck=(int)Math.floor(Math.random()*10)%3;
-		switch (empCheck){
-		     case
-		        is_Full_Time:
-			    emphrs=8;
-			 break;
-		     case Is_Part_Time:
-		    	 emphrs=4;
-		    	 break;
-		     default:
-		    	 emphrs=0;
-		    	 }
-		totalemphrs+=emphrs;
-		int totalempwage=Emp_Rate_Per_Hrs*emphrs;
-		System.out.println("total hrs: "+totalemphrs+" totalempwage "+totalempwage);
+	public static final int IS_PART_TIME=2;
+	public static final int IS_FULL_TIME=1;
+	public static final int EMP_RATE_PER_HRS=20;
+	public static final int NUM_OF_WORKING_DAYS=5;
+	public static void main(String args[]) {
+		int emphrs=0,empwage=0,totalEmpwage=0;
+		for(int day=0;day<NUM_OF_WORKING_DAYS;day++) {
+			int empcheck=(int)Math.floor(Math.random()*10)%3;
+			switch (empcheck) {
+			   case IS_PART_TIME:
+				   emphrs=4;
+				   break;
+			   case IS_FULL_TIME:
+				   emphrs=8;
+				   break;
+			   default:
+				   emphrs=0;
+				   
+			}
+			empwage=emphrs*EMP_RATE_PER_HRS;
+			totalEmpwage+= empwage;
+			System.out.println(" emp wage="+empwage+"emphrs "+" "+emphrs);
+			System.out.println("total emp wage"+totalEmpwage);
+		}
+		System.out.println("total emp wage"+totalEmpwage);
+		
 	}
 	
-	}
+	
+}
 	
